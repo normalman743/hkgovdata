@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hkgovdata"
+version = "0.1.0"
+description = "Discover Hong Kong open data and download historical archives from reusable plans."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "normalman743"}]
+dependencies = [
+    "requests>=2.31",
+    "tqdm>=4.60",
+    "urllib3>=1.26",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1"]
+
+[project.urls]
+Repository = "https://github.com/normalman743/hkgovdata"
+Issues = "https://github.com/normalman743/hkgovdata/issues"
+
+[tool.setuptools]
+packages = ["hkgovdata"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+hkgovdata = ["search_params.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,2 @@
+include README_zh.md
+recursive-include examples *.json
